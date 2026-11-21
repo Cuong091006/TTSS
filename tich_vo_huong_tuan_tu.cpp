@@ -11,15 +11,15 @@ double tinhTichVoHuongTuanTu(const std::vector<double>& vectorA, const std::vect
     }
 
     long long kichThuoc = static_cast<long long>(vectorA.size());
-    double tongTich = 0.0;
+    double tichVoHuong = 0.0;
 
     for (long long i = 0; i < kichThuoc; ++i) {
-        tongTich += vectorA[i] * vectorB[i];
+        tichVoHuong += vectorA[i] * vectorB[i];
     }
 
-    if (!std::isfinite(tongTich)) {
-        throw std::overflow_error("Loi tinh toan: Ket qua tich vo huong bi tran so thuc (Inf hoac NaN).");
+    if (!std::isfinite(tichVoHuong)) {
+        throw std::overflow_error("Loi tinh toan: Inf hoac NaN.");
     }
 
-    return tongTich;
+    return tichVoHuong;
 }
